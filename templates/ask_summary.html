@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Summary</title>
+</head>
+<body>
+    <h1>Submit Summary for {{ task_name }}</h1>
+    <form action="" method="post">
+        <textarea id="summary" name="summary" required></textarea><br>
+        <button type="submit">Submit Summary</button>
+    </form>
+</body>
+</html>

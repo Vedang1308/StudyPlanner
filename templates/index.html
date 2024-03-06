@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+</head>
+<body>
+    <h1>Schedule for {{ day }}</h1>
+    {% if current_task %}
+        <div>
+            <p>Task: {{ current_task[0] }}, Time: {{ current_task[1] }} - {{ current_task[2] }}</p>
+            <p>Is the above task completed?</p>
+            <form action="/complete_task" method="post">
+                <input type="hidden" name="task_name" value="{{ current_task[0] }}">
+                <input type="hidden" name="task_index" value="{{ task_index }}">
+                <button type="submit" name="response" value="yes">Yes</button>
+                <button type="submit" name="response" value="no">No</button>
+            </form>
+        </div>
+    {% else %}
+        <p>No tasks for today. Enjoy your day off!</p>
+    {% endif %}
+</body>
+</html>

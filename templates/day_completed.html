@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Day Completed</title>
+</head>
+<body>
+    <h1>Day Completed Successfully</h1>
+    <p>All tasks for today have been attempted !</p>
+    
+    <a href="{{ url_for('uploaded_file', filename=summary_file) }}" download>Download Summaries</a>
+    <br>
+    <a href="{{ url_for('uploaded_file', filename=punishment_file) }}" download>Download Punishments</a>
+</body>
+</html>
